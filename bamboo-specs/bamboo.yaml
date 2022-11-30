@@ -8,8 +8,17 @@ stages:
   - Stage 1:
       jobs:
         - Job 1
+  - Stage 2:
+      jobs:
+        - Job 2
 
 Job 1:
   tasks:
     - script:
         - echo 'Hello from YAML Specs'
+Job 2:
+  tasks:
+    - script:
+      interpreter: /bin/sh
+      scripts:
+        - env
