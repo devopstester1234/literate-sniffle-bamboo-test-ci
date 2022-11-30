@@ -5,10 +5,13 @@ plan:
   name: My Plan
 
 stages:
-  - Stage 1:
+  - Stage1:
       jobs:
         - Job1
         - Job2
+  - Stage2:
+      jobs:
+        - Job3
 Job1:
   tasks:
     - script:
@@ -18,4 +21,12 @@ Job2:
     - script: 
         interpreter: /bin/sh
         scripts:
+          - env
+Job2:
+  tasks:
+    - script: 
+        interpreter: /bin/sh
+        scripts:
+          - pwd
+          - ls -al
           - env
